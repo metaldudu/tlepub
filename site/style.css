@@ -1,0 +1,127 @@
+/* 默认浅色模式 */
+html {
+  background-color: #f8f8f8;
+  color: #444;
+  font-family: sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 2em;
+  background: transparent; /* 保持透明背景 */
+}
+
+small {
+  font: 0.8em;
+  color: #a0a0a0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  padding: 0;
+  flex-wrap: wrap; /* 小屏幕时自动换行 */
+}
+
+nav li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+ul.horizontal {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+ul.horizontal li {
+  white-space: nowrap;
+}
+
+ul.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+ul.flex-list li {
+  padding: 4px 10px;
+  background: #e8e8e8;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+}
+
+img.icon {
+  height: 1em;      /* 高度跟字体大小一致 */
+  vertical-align: middle; /* 垂直居中对齐文字 */
+}
+
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #1a1a1a;
+    color: #bbb;
+  }
+
+  body {
+    background: transparent;
+  }
+
+  a {
+    color: #88bbee;
+  }
+
+  a:hover {
+    color: #a0d4ff;
+  }
+
+  ul.flex-list li {
+    background: #2a2a2a;
+  }
+
+  hr {
+    background-color: #555;
+  }
+}
+
+/* 响应式布局 */
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  ul.horizontal,
+  ul.flex-list {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
